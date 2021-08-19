@@ -1,0 +1,24 @@
+{
+  "name": "sdc-products",
+  "description": "Systems Design Capstone",
+  "version": "1.0.0",
+  "author": "Russ Lightsey",
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "automate": "sequelize-auto -h localhost -d world -u russ3 -p 5432 -e postgres -o ./models/tables -l es6"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "sequelize-auto": "^0.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
