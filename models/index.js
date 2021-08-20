@@ -5,11 +5,11 @@ const { initModels } = require('./tables/init-models');
 const models = initModels(sequelize);
 
 module.exports = {
-  getPopulation: (count) => models.city.findAll({
+  getPopulation: (rowCount) => models.city.findAll({
     order: [
       ['population', 'DESC'],
     ],
-    limit: count,
+    limit: rowCount,
   }),
   getCapital: (country) => models.country.findAll({
     where: {
@@ -20,5 +20,8 @@ module.exports = {
       as: 'capital_city',
     }
   }),
-  getByContinent: () => 'fill me in',
+  getByContinent: (continent) => models.country.findAll({
+    where: { continent: continent },
+    order: [['name', 'DESC']],
+  }),
 };

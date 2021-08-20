@@ -11,6 +11,11 @@ router.get('/capital/:country', (req, res) => {
     .then((data) => res.send(data))
     .catch((err) => res.send(err));
 });
+router.get('/country/:continent', (req, res) => {
+  db.getByContinent(req.params.continent)
+    .then((data) => res.send(data))
+    .catch((err) => res.send(err));
+});
 router.get('/test', (req, res) => {
   db.getTest()
     .then((data) => res.send(data))
